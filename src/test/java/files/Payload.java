@@ -66,4 +66,13 @@ public class Payload {
                 "";
 
     }
+
+    public static String addNewBook(String isbn, String aisle){
+        return "{\n" +
+                "    \"name\": \"Learn Appium Automatisdfdsfdsfdson with sdfsdfdsJava and sedfdsf42342342...\",\n" +
+                "    \"isbn\": \""+isbn+"\",\n" +
+                "    \"aisle\": \""+aisle+"\",\n" +
+                "    \"author\": \"John foe\"\n" +
+                "}";
+    }
 }
