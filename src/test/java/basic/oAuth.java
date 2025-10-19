@@ -1,7 +1,11 @@
 package basic;
 
 import io.restassured.path.json.JsonPath;
+import pojo.Api;
 import pojo.GetCourse;
+import pojo.WebAutomation;
+
+import java.util.List;
 
 import static io.restassured.RestAssured.given;
 
@@ -46,6 +50,20 @@ public class oAuth {
         System.out.println("The linkedin url is " + getCourse.getLinkedIn());
 
         System.out.println(getCourse.getCourses().getApi().get(0).getCourseTitle());
+
+        List<Api> l = getCourse.getCourses().getApi();
+
+        l.stream().filter(s -> s.getCourseTitle().
+                equalsIgnoreCase("Rest Assured Automation using Java")).
+                forEach(s -> System.out.println(s.getCourseTitle() + " " + s.getPrice()));
+
+        List<WebAutomation> webAutomation = getCourse.getCourses().getWebAutomation();
+
+        webAutomation.stream().
+                forEach(s -> System.out.println("All course title are " + s.getCourseTitle()));
+
+
+
 
 
     }
